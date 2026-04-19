@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "picslpixel"
+version = "0.1.1"
+description = "Helper classes and functions for working with medical imaging data, primarily using SimpleITK in python"
+authors = [
+    {name = "Jeffrey Duda", email = "jeff.duda@gmail.com"}
+]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+"Homepage" = "https://github.com/jeffduda/picslpixel"
+

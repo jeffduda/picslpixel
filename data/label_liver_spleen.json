@@ -1,0 +1,16 @@
+{ 
+    "labels": [
+        { 
+          "index" : 1,
+          "name": "spleen",
+          "color": [153,1,1, 100],
+          "border": [153,1,1, 255]
+        },
+        { "index": 5,
+          "name": "liver",
+          "color": [8, 82, 150, 100],
+          "border": [8, 82, 150, 255]
+        }
+    ]
+}
+

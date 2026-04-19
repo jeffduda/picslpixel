@@ -1,0 +1,30 @@
+{ 
+    "labels": [
+        { 
+          "index" : 1,
+          "name": "spleen",
+          "color": [0, 255, 0, 100],
+          "border": [0, 255, 0, 255]
+        },
+        { "index": 2,
+          "name": "kidney_right",
+          "color": [0, 0, 255, 100],
+          "border": [0, 0, 255, 255]
+        },
+        { "index": 3,
+          "name": "kidney_left",
+          "color": [255, 255, 0, 100],
+          "border": [255, 255, 0, 255]
+        },
+        { "index": 4,
+          "name": "gallbladder",
+          "color": [255, 0, 255, 100],
+          "border": [255, 0, 255, 255]
+        },
+        { "index": 5,
+          "name": "liver",
+          "color": [255, 0, 0, 100],
+          "border": [255, 0, 0, 255]
+        }
+    ]
+}
