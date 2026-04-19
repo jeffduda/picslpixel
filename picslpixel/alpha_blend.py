@@ -1,4 +1,5 @@
 import SimpleITK as sitk
+from .utilities import mask_image_multiply
 
 # From https://github.com/InsightSoftwareConsortium/SimpleITK-Notebooks/blob/main/Python/05_Results_Visualization.ipynb
 
@@ -37,7 +38,7 @@ def alpha_blend(image1, image2, alpha=0.5, mask1=None, mask2=None):
 
         intersection_mask = mask1 * mask2
 
-        intersection_image = self._mask_image_multiply(alpha * intersection_mask, img1) + self._mask_image_multiply((1 - alpha) * intersection_mask, img2)
+        intersection_image = mask_image_multiply(alpha * intersection_mask, img1) + mask_image_multiply((1 - alpha) * intersection_mask, img2)
         
-        out_image = intersection_image + self._mask_image_multiply(mask2 - intersection_mask, img2) + self._mask_image_multiply(mask1 - intersection_mask, img1)
+        out_image = intersection_image + mask_image_multiply(mask2 - intersection_mask, img2) + mask_image_multiply(mask1 - intersection_mask, img1)
         return out_image
