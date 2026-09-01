@@ -9,12 +9,16 @@ Various helper classes and functions for working with medical imaging data using
 You can install the package from source or eventually via PyPI
 
 ## Get the repo
+```bash
 git clone https://github.com/jeffduda/picslpixel.git 
 pip install -e picslpixel
+```
 
 ## Examples
 
 ### Create a color overlay from a scalar volume and a set of labels
 Define the colors in a json file (see data/label_colors.json for an example)
 
+```bash
 python /path/to/picslpixel/picslpixel/examples/volume_overlay.py -i scalar_volume.nii.gz -s label_volume.nii.gz -c label_colors.json  -w 400 -l 50 -b 1 -o output_overlay.nii.gz
+```
