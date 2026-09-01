@@ -103,7 +103,7 @@ class LabelOverlay:
                 #border_mask = sitk.LabelContour(sitk.Cast(label_mask, sitk.sitkUInt8), fullyConnected=True, backgroundValue=0)
                 #label_mask = label_mask - border_mask
 
-                roi_core = sitk.BinaryErode(label_mask, kernelRadius=[self.width]*3, kernelType=sitk.sitkBall, foregroundValue=1)
+                roi_core = sitk.BinaryErode(label_mask, kernelRadius=[int(self.width)]*3, kernelType=sitk.sitkBall, foregroundValue=1)
                 roi_core = sitk.Cast(roi_core, sitk.sitkFloat32)
                 label_mask = sitk.Cast(label_mask, sitk.sitkFloat32)
                 border_mask = label_mask - roi_core
