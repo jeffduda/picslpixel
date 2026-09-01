@@ -19,6 +19,16 @@ pip install -e picslpixel
 ### Create a color overlay from a scalar volume and a set of labels
 Define the colors in a json file (see data/label_colors.json for an example)
 
+The overlay example has the following parameters
+
+* -i input_image.nii.gz (required)
+* -s input_labels.nii.gz (required)
+* -c label_colors.json (required)
+* -w window width (int) [default=400]
+* -l window level (int) [default=50]
+* -b border width (int) [default=1]
+* -o output_volume.nii.gz (required)
+
 ```bash
 python /path/to/picslpixel/picslpixel/examples/volume_overlay.py -i scalar_volume.nii.gz -s label_volume.nii.gz -c label_colors.json  -w 400 -l 50 -b 1 -o output_overlay.nii.gz
 ```
