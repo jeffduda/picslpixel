@@ -32,3 +32,15 @@ The overlay example has the following parameters
 ```bash
 python /path/to/picslpixel/picslpixel/examples/volume_overlay.py -i scalar_volume.nii.gz -s label_volume.nii.gz -c label_colors.json  -w 400 -l 50 -b 1 -o output_overlay.nii.gz
 ```
+
+### Generate RGB Dicom files from an RGB Nifti and the original dicom files
+The original dicom files need to be the only files in the input directory, and the output directory should already exist
+
+* -i overlay.nii.gz 
+* -d original_dicom_files/ 
+* -o rgb_dicom_files/
+
+```bash
+python /path/to/picslpixel/picslpixel/examples/dicom_rgb.py -i overlay.nii.gz -d original_dicom_dir/ -o output_dicom_dir
+```
+
