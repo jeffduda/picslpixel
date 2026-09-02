@@ -120,7 +120,7 @@ class LabelOverlay:
             if roi_border is not None:
                 overlay = alpha_blend(roi_border, overlay, mask1=border_mask, alpha=self.border_colors[label][3]/255.0)
 
-
+            overlay = sitk.Cast(overlay, sitk.sitkVectorUInt8)
 
         return(overlay)
     
