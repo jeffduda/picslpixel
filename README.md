@@ -39,6 +39,10 @@ The original dicom files need to be the only files in the input directory, and t
 * -i overlay.nii.gz 
 * -d original_dicom_files/ 
 * -o rgb_dicom_files/
+* -t tolerance (allowed diff in slice positions between dicom and nifti)
+* -s series number to use in new dicom
+* -sd series desscription to use in new dicom
+* -an accession number to use in new dicom
 
 ```bash
 python /path/to/picslpixel/picslpixel/examples/dicom_rgb.py -i overlay.nii.gz -d original_dicom_dir/ -o output_dicom_dir
