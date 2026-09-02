@@ -50,3 +50,36 @@ def load_and_sort_dicom_directory(directory_path):
 # dicom_dir = "path/to/your/dicom/series"
 # sorted_datasets = load_and_sort_dicom_directory(dicom_dir)
 # print(f"Number of slices: {len(sorted_datasets)}")
+
+def show_dicom_meta(dcm, tag: str, index: int = None):
+    """
+    Displays the value of a specific DICOM tag from a DICOM dataset.
+    """
+    if index is not None:
+        if tag in dcm and hasattr(dcm[tag], "value") and isinstance(dcm[tag].value, pydicom.multival.MultiValue):
+            if 0 <= index < len(dcm[tag].value):
+                print(f"{dcm[tag].value[index]}")
+            else:
+                print(f"Index {index} is out of bounds for tag {tag}.")
+
+        else:
+            print(f"Tag {tag} at index {index} not found or is not a pydicom.multival.MultiValue.")
+    elif tag in dcm:
+        print(f"{dcm[tag].value}")
+    else:
+        print(f"Tag {tag} not found in the DICOM dataset.")
+
+def set_dicom_meta(dcm, tag: str, value, index: int = None):
+    """
+    Sets the value of a specific DICOM tag in a DICOM dataset.
+    """
+    if index is not None:
+        if tag in dcm and hasattr(dcm[tag], "value") and isinstance(dcm[tag].value, pydicom.multival.MultiValue):
+            if 0 <= index < len(dcm[tag].value):
+                dcm[tag].value[index] = value
+            else:
+                print(f"Index {index} is out of bounds for tag {tag}.")
+        else:
+            print(f"Tag {tag} at index {index} not found or is not a pydicom.multival.MultiValue.")
+    else:
+        dcm[tag].value = value

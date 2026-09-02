@@ -3,7 +3,7 @@ from .alpha_blend import alpha_blend
 from .label_overlay import LabelOverlay
 from .prep_image import PrepImage
 from .dicom_utils import load_and_sort_dicom_directory
-
+from .dicom_utils import show_meta
 
 __all__ = ["alpha_blend", "load_and_sort_dicom_directory", "mask_image_multiply", "LabelOverlay", "PrepImage"]
 

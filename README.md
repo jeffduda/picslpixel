@@ -2,7 +2,12 @@
 
 # picslpixel
 
-Various helper classes and functions for working with medical imaging data using SimpleITK
+Various helper classes and functions for working with medical imaging data using SimpleITK and similar tools.
+
+Current examples include
+
+* Generating a color overlay image from a scalar volume and a set of labels
+* Generating dicom files from an rgb volume and the dicom files for the original data
 
 
 # Installation
