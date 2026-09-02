@@ -20,10 +20,10 @@ def dicom_rgb(args):
     #rgbArr = np.flip(rgbArr, 1)
 
     seriesUID=pydicom.uid.generate_uid()
-    seriesNumber=104
-    seriesDescription="Overlay RGB"
-    accessionNumber="HTX12345"
-
+    seriesNumber=args.series_number
+    seriesDescription=args.series_description
+    accessionNumber=args.accession_number
+    
     for i, dcm in enumerate(dcms):
 
         instanceUID = pydicom.uid.generate_uid()
@@ -42,7 +42,8 @@ def dicom_rgb(args):
         dcm.SOPInstanceUID = instanceUID
         dcm.SeriesNumber = seriesNumber
         dcm.SeriesDescription = seriesDescription
-        dcm.AccessionNumber = accessionNumber
+        if accessionNumber is not None:
+            dcm.AccessionNumber = accessionNumber
 
         itype = dcm.ImageType
         itype[0]="DERIVED"
@@ -80,6 +81,9 @@ if __name__ == "__main__":
     parser.add_argument("--input_dicom_directory", '-d', type=str, default=None, required=True, help="Directory of dicom files")
     parser.add_argument("--output_directory", '-o', type=str, default=None, required=True, help="Path to the output nifti file")
     parser.add_argument("--tolerance", '-t', type=float, default=1e-3, required=False, help="Tolerance for position matching (default: 1e-3)")
+    parser.add_argument("--series_number", '-s', type=int, default=104, required=False, help="Series number for the output DICOM files (default: 104)")
+    parser.add_argument("--series_description", '-sd', type=str, default="Overlay RGB", required=False, help="Series description for the output DICOM files (default: 'Overlay RGB')")
+    parser.add_argument("--accession_number", '-an', type=str, required=False, help="Accession number for the output DICOM files (default: 'HTX12345')")
     args = parser.parse_args()
 
     dicom_rgb(args)
