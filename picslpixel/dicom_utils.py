@@ -35,7 +35,7 @@ def load_and_sort_dicom_directory(directory_path):
 
         # 4. Project Image Position Patient onto the slice-normal vector and sort
     # We zip the projection distance with the slice object to sort them together
-    sorted = sorted(
+    sorted_dcm = sorted(
         slices,
         key=lambda s: np.dot(np.array(s.ImagePositionPatient), slice_normal)
     )
@@ -44,7 +44,7 @@ def load_and_sort_dicom_directory(directory_path):
     # Resulting shape format: (Z_slices, Y_rows, X_columns)
     #volume_3d = np.stack([s.pixel_array for s in sorted_slices])
 
-    return sorted
+    return sorted_dcm
 
 # Example Usage:
 # dicom_dir = "path/to/your/dicom/series"
