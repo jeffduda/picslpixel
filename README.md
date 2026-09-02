@@ -34,7 +34,7 @@ python /path/to/picslpixel/picslpixel/examples/volume_overlay.py -i scalar_volum
 ```
 
 ### Generate RGB Dicom files from an RGB Nifti and the original dicom files
-The original dicom files need to be the only files in the input directory, and the output directory should already exist
+The original dicom files need to be the only files in the input directory, and the output directory should already exist. A new series UID will be randomly generated.
 
 * -i overlay.nii.gz 
 * -d original_dicom_files/ 
@@ -45,6 +45,10 @@ The original dicom files need to be the only files in the input directory, and t
 * -an accession number to use in new dicom
 
 ```bash
-python /path/to/picslpixel/picslpixel/examples/dicom_rgb.py -i overlay.nii.gz -d original_dicom_dir/ -o output_dicom_dir
+python /path/to/picslpixel/picslpixel/examples/dicom_rgb.py -i overlay.nii.gz -d original_dicom_dir/ -o output_dicom_dir -s 101 -sd "Overlay Series" -an HTX0001
 ```
+
+
+
+
 
